@@ -1,0 +1,22 @@
+简述: unittest 与 pytest的区别
+
+1.pytest比unittest 简洁、方便。
+【用例编辑方面】
+2.unittest 测试文件必须先引入包，测试的类必须继承 TestCase，且用例个数比较复杂不能兼容pytest用例
+而pytest用例格式简单，可以兼容 unittest 用例
+【参数化方面】
+unittest要结合ddt来实现参数化
+pytest直接使用@pytest.mark.parameteize装饰器
+【断言】
+pytest比unittest断言方法更简洁，直接使用 assert 表达式就可以了
+
+【失败重试】
+unittest无法失败重试，pytest支持用例失败重试
+【报告】
+pytest的提供了allure插件，生成的测试报告更加美观
+
+
+简述 接口的关联的理解以及解决方法
+接口的关联就是两个测试用例之间存在关联关系，用时间业务场景举例说名，比如商城下订单，无论如何也需要进行登录操作，
+
+解决方法： 在进行下订单的时候引用登录 配置Tooken
